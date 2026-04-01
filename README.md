@@ -1,49 +1,145 @@
-## Crop Recommendation Web App
+# 🌱 Crop Recommendation Web App
 
-Simple Flask web application that loads a pre-trained Random Forest model from `crop_reco_model.pkl` and suggests a suitable crop based on user-provided soil and weather conditions.
+A Machine Learning-based web application that recommends the most suitable crop to grow based on environmental and soil conditions. This project uses a **Random Forest model** trained on agricultural data and is deployed using **Flask**.
 
-### Assumed model inputs
+---
 
-This app assumes the model expects the following 7 numeric features in this exact order (1 row per prediction):
+## 🚀 Live Demo
 
-1. `N` – Nitrogen
-2. `P` – Phosphorus
-3. `K` – Potassium
-4. `temperature` – Temperature in °C
-5. `humidity` – Relative humidity in %
-6. `ph` – Soil pH
-7. `rainfall` – Rainfall in mm
+🌐 Frontend: https://fintak.netlify.app
 
-If your model uses a different feature set or ordering, adjust the `feature_names` list and form fields accordingly in `app.py` and `templates/index.html`.
+## 🚀 Features
 
-### Setup
+* 🌾 Predicts best crop based on input parameters
+* 🤖 Machine Learning model (Random Forest)
+* 🌐 Interactive web interface using HTML, CSS, JavaScript
+* ⚡ Fast and lightweight Flask backend
+* ☁️ Deployed on Render
 
-1. **Create and activate a virtual environment (recommended)**
+---
 
-   ```bash
-   cd "/Users/rajsirohi/Desktop/Crop recomm"
-   python3 -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
+## 🧠 Tech Stack
 
-2. **Install dependencies**
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend:** Flask (Python)
+* **Machine Learning:** Scikit-learn (Random Forest)
+* **Deployment:** Render
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+---
 
-3. **Run the Flask app**
+## 📊 Input Parameters
 
-   ```bash
-   python app.py
-   ```
+The model takes the following inputs:
 
-4. **Open in browser**
+* Nitrogen (N)
+* Phosphorus (P)
+* Potassium (K)
+* Temperature (°C)
+* Humidity (%)
+* pH value
+* Rainfall (mm)
 
-   Visit `http://127.0.0.1:5000/` in your browser and enter the input values to get a crop recommendation.
+---
 
-### Notes
+## 🧪 Model Details
 
-- The model is loaded from `crop_reco_model.pkl` in the project root when the app starts.
-- The `/predict` endpoint accepts both normal HTML form submissions and JSON requests. For programmatic use, you can send a `POST` request with JSON containing the 7 fields listed above.
+* Algorithm: Random Forest Classifier
+* Library: Scikit-learn
+* Model file: `crop_reco_model.pkl`
 
+---
+
+## 📁 Project Structure
+
+```
+Crop-Recommendation/
+│
+├── app.py
+├── crop_reco_model.pkl
+├── requirements.txt
+├── runtime.txt
+├── Procfile
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── main.js
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository:
+
+```
+git clone https://github.com/your-username/Crop-Recommendation.git
+cd Crop-Recommendation
+```
+
+2. Create virtual environment:
+
+```
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+```
+
+3. Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+4. Run the app:
+
+```
+python app.py
+```
+
+5. Open in browser:
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
+## 🌍 Deployment
+
+This project is deployed on **Render** using:
+
+* `gunicorn` for production server
+* `runtime.txt` to specify Python version
+* Environment variables for configuration
+
+---
+
+## 📸 Output
+
+The app predicts the most suitable crop based on given inputs and displays it instantly on the web interface.
+
+---
+
+## 🎯 Future Improvements
+
+* 🌦️ Integrate real-time weather API
+* 📱 Make UI fully responsive
+* 📊 Add data visualization dashboard
+* 🌍 Multi-language support
+
+---
+
+## 👨‍💻 Author
+
+**Raj Sirohi**
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub and share it!
