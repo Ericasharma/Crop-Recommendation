@@ -136,7 +136,7 @@ The app predicts the most suitable crop based on given inputs and displays it in
 
 ## 👨‍💻 Author
 
-**Raj Sirohi**
+**Erica Sharma**
 
 ---
 
